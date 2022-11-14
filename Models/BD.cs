@@ -1,11 +1,11 @@
-using TP_Final.Models;
+using TPN09.Models;
 using System.Collections.Generic;
 using System.Linq;
 using System;
 using System.Data.SqlClient;
 using Dapper;
 
-namespace TP_Final.Models;
+namespace TPN09.Models;
 
 public class BD{
 

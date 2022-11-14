@@ -1,0 +1,24 @@
+using System.Diagnostics;
+using System;
+using System.Collections.Generic;
+using Microsoft.AspNetCore.Mvc;
+using TPN09.Models;
+
+namespace TPN09.Controllers;
+
+public class VideojuegoController : Controller
+{
+    private readonly ILogger<VideojuegoController> _logger;
+
+    public VideojuegoController(ILogger<VideojuegoController> logger)
+    {
+        _logger = logger;
+    }
+
+    [HttpGet("{id}")]
+    public ActionResult<Videojuego> Get(int id)
+    {
+
+    }
+
+}
