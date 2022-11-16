@@ -15,10 +15,98 @@ public class VideojuegoController : Controller
         _logger = logger;
     }
 
+    [HttpGet]
+    public ActionResult<Videojuego> Get()
+    {
+        List<Videojuego> lista = BD.BuscarVideojuegos();
+        return Ok(lista);
+    }
+
     [HttpGet("{id}")]
     public ActionResult<Videojuego> Get(int id)
     {
+        if (id < 1)
+        {
+            return BadRequest();
+        }
+        Videojuego v = BD.BuscarVideojuegoSegunID(id); 
 
+        if(v == null)
+        {
+            return NotFound();
+        }
+
+        return Ok(v);
+    }
+
+    [HttpPost]
+    public ActionResult<Videojuego> Post(Videojuego v)
+    {
+        if(v.Nombre == null || v.Nombre == "")
+        {
+            return BadRequest();
+        }
+        BD.InsertarVideojuegoConObjeto(v);
+        return Created();
+    }
+
+    [HttpPut("{id}")]
+    public ActionResult<Videojuego> Put(int id, Videojuego v)
+    {
+        if (id < 1)
+        {
+            return BadRequest();
+        }
+        if(v == null)
+        {
+            return BadRequest();
+        }
+        Videojuego v2 = BD.BuscarVideojuegoSegunID(id); 
+        if(v2 == null)
+        {
+            return NotFound();
+        }
+        BD.ActualizarVideojuego(id, v);
+        return Ok();
+    }
+    [HttpPatch("{id}")]
+    public ActionResult<Videojuego> Patch(int id, Videojuego v)
+    {
+        if (id < 1)
+        {
+            return BadRequest();
+        }
+        if(v == null)
+        {
+            return BadRequest();
+        }
+        Videojuego v2 = BD.BuscarVideojuegoSegunID(id); 
+        if(v2 == null)
+        {
+            return NotFound();
+        }
+        BD.ActualizarVideojuego(id, v);
+        return Ok();
+    }
+
+    [HttpDelete("{id}")]
+    public ActionResult<Videojuego> Delete(int id)
+    {
+        if(id < 1)
+        {
+            return BadRequest();
+        }
+
+        Videojuego v = BD.BuscarVideojuegoSegunID(id);
+
+        if(v == null)
+        {
+            return NotFound();
+        }
+
+        BD.EliminarVideojuegoDeVXC(id);
+        BD.EliminarVideojuegoSegunId(id);
+        return Ok();
     }
 
 }

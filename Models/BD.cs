@@ -11,6 +11,22 @@ public class BD{
 
 private static string _connectionString = @"Server=A-PHZ2-AMI-004;DataBase=AlmacenVideoJuegos;Trusted_Connection=True";
 
+public static List<Videojuego> BuscarVideojuegos(){
+    List<Videojuego> lista = new List<Videojuego>();
+    using(SqlConnection db = new SqlConnection(_connectionString)){  
+        string sql = "SELECT * FROM Videojuego";
+        lista = db.Query<Videojuego>(sql).ToList();
+    }
+    return lista;
+}
+
+public static Videojuego ActualizarVideojuego(int id, Videojuego v)
+{    
+    string sql = "UPDATE Videojuego SET IdEmpresa = @pIdEmpresa, fechaLanzamiento = @pFechaLanzamiento, Nombre = @pNombre, Descripción = @pDescripción, IdClasificacion = @pIdClasificacion, Caratula = @pCaratula, Banner = @pBanner, Logo = @v.Logo WHERE IdVideojuego = @vid";
+    using(SqlConnection db = new SqlConnection(_connectionString)){
+        db.Execute(sql, new{vid = id, pIdEmpresa = v.IdEmpresa, pFechaLanzamiento = v.FechaLanzamiento, pNombre = v.Nombre, pDescripción = v.Descripción, pIdClasificacion = v.IdClasificacion, pCaratula = v.Caratula, pBanner = v.Banner, pLogo = v.Logo});
+    }
+}
 public static List<Videojuego> BuscarVideojuegosSegunNombre(string nombre){
     List<Videojuego> lista = new List<Videojuego>();
     using(SqlConnection db = new SqlConnection(_connectionString)){  
@@ -70,6 +86,15 @@ public static void InsertarVideojuego(int empresa, DateTime fechaLanzamiento, st
         db.Execute(sql, new {vEmpresa=empresa, vFechaLanzamiento=fechaLanzamiento ,vNombre=nombre ,vDescripcion = descripcion, vClasificacion= clasificacion, vCaratula = caratula, vBanner = banner, vLogo = Logo});
     }
 }
+
+public static void InsertarVideojuegoConObjeto(Videojuego v)
+{
+    string sql = "INSERT INTO Videojuego VALUES (@pEmpresa, @pFechaLanzamiento, @pNombre, @pDescripcion, @pClasificacion, @pCaratula, @pBanner ,@pLogo)";
+    using(SqlConnection db = new SqlConnection(_connectionString)){
+        db.Execute(sql, new {pEmpresa=v.IdEmpresa, pFechaLanzamiento=v.FechaLanzamiento ,pNombre=v.Nombre ,pDescripcion = v.Descripción, pClasificacion= v.Clasificacion, pCaratula = v.Caratula, pBanner = v.Banner, pLogo = v.Logo});
+    }
+}
+
 public static Videojuego BuscarUltimoRegistro()
 {    
     Videojuego lista = new Videojuego();
