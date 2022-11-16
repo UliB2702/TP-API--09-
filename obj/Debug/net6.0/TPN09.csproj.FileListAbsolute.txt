@@ -25,3 +25,13 @@ D:\4°DInformatica\Programacion\C#\TPN09\obj\Debug\net6.0\refint\TPN09.dll
 D:\4°DInformatica\Programacion\C#\TPN09\obj\Debug\net6.0\TPN09.pdb
 D:\4°DInformatica\Programacion\C#\TPN09\obj\Debug\net6.0\TPN09.genruntimeconfig.cache
 D:\4°DInformatica\Programacion\C#\TPN09\obj\Debug\net6.0\ref\TPN09.dll
+C:\Users\45687573\Desktop\TPN09\obj\Debug\net6.0\TPN09.csproj.AssemblyReference.cache
+C:\Users\45687573\Desktop\TPN09\obj\Debug\net6.0\TPN09.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\45687573\Desktop\TPN09\obj\Debug\net6.0\TPN09.AssemblyInfoInputs.cache
+C:\Users\45687573\Desktop\TPN09\obj\Debug\net6.0\TPN09.AssemblyInfo.cs
+C:\Users\45687573\Desktop\TPN09\obj\Debug\net6.0\TPN09.csproj.CoreCompileInputs.cache
+C:\Users\45687573\Desktop\TPN09\obj\Debug\net6.0\TPN09.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\45687573\Desktop\TPN09\obj\Debug\net6.0\TPN09.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\45687573\Desktop\TPN09\obj\Debug\net6.0\TPN09.dll
+C:\Users\45687573\Desktop\TPN09\obj\Debug\net6.0\refint\TPN09.dll
+C:\Users\45687573\Desktop\TPN09\obj\Debug\net6.0\TPN09.pdb

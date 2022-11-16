@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using System;
 
-namespace TP_Final.Models;
+namespace TPN09.Models;
 
 
 public class Empresa

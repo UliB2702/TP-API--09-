@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace TP_Final.Models;
+namespace TPN09.Models;
 
 
 public class Categoria

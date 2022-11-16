@@ -1,7 +1,8 @@
 using System.Collections.Generic;
 using System;
+using TPN09.Models;
 
-namespace TP_Final.Models;
+namespace TPN09.Models;
 
 public class Videojuego
 {

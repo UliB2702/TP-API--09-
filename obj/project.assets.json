@@ -685,11 +685,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "d:\\4°DInformatica\\Programacion\\C#\\TPN09\\TPN09.csproj",
+      "projectUniqueName": "C:\\Users\\45687573\\Desktop\\TPN09\\TPN09.csproj",
       "projectName": "TPN09",
-      "projectPath": "d:\\4°DInformatica\\Programacion\\C#\\TPN09\\TPN09.csproj",
+      "projectPath": "C:\\Users\\45687573\\Desktop\\TPN09\\TPN09.csproj",
       "packagesPath": "C:\\Users\\45687573\\.nuget\\packages\\",
-      "outputPath": "d:\\4°DInformatica\\Programacion\\C#\\TPN09\\obj\\",
+      "outputPath": "C:\\Users\\45687573\\Desktop\\TPN09\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
