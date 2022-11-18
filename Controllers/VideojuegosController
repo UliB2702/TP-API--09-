@@ -6,24 +6,19 @@ using TPN09.Models;
 
 namespace TPN09.Controllers;
 
-public class VideojuegoController : Controller
+[ApiController]
+[Route("[controller]")]
+public class VideojuegosController : ControllerBase
 {
-    private readonly ILogger<VideojuegoController> _logger;
-
-    public VideojuegoController(ILogger<VideojuegoController> logger)
-    {
-        _logger = logger;
-    }
-
     [HttpGet]
-    public ActionResult<Videojuego> Get()
+    public IActionResult Get()
     {
         List<Videojuego> lista = BD.BuscarVideojuegos();
         return Ok(lista);
     }
 
     [HttpGet("{id}")]
-    public ActionResult<Videojuego> Get(int id)
+    public IActionResult Get(int id)
     {
         if (id < 1)
         {
@@ -40,7 +35,7 @@ public class VideojuegoController : Controller
     }
 
     [HttpPost]
-    public ActionResult<Videojuego> Post(Videojuego v)
+    public IActionResult Post(Videojuego v)
     {
         if(v.Nombre == null || v.Nombre == "")
         {
@@ -51,7 +46,7 @@ public class VideojuegoController : Controller
     }
 
     [HttpPut("{id}")]
-    public ActionResult<Videojuego> Put(int id, Videojuego v)
+    public IActionResult Put(int id, Videojuego v)
     {
         if (id < 1)
         {
@@ -70,7 +65,7 @@ public class VideojuegoController : Controller
         return Ok();
     }
     [HttpPatch("{id}")]
-    public ActionResult<Videojuego> Patch(int id, Videojuego v)
+    public IActionResult Patch(int id, Videojuego v)
     {
         if (id < 1)
         {
@@ -90,7 +85,7 @@ public class VideojuegoController : Controller
     }
 
     [HttpDelete("{id}")]
-    public ActionResult<Videojuego> Delete(int id)
+    public IActionResult Delete(int id)
     {
         if(id < 1)
         {
