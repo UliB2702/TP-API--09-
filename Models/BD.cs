@@ -9,7 +9,7 @@ namespace TPN09.Models;
 
 public class BD{
 
-private static string _connectionString = @"Server=A-PHZ2-CIDI-047;DataBase=AlmacenVideoJuegos;Trusted_Connection=True";
+private static string _connectionString = @"Server=A-PHZ2-AMI-004;DataBase=AlmacenVideoJuegos;Trusted_Connection=True";
 
 public static List<Videojuego> BuscarVideojuegos(){
     List<Videojuego> lista = new List<Videojuego>();

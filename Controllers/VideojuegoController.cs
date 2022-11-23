@@ -6,10 +6,12 @@ using TPN09.Models;
 
 namespace TPN09.Controllers;
 
+
 [ApiController]
 [Route("[controller]")]
 public class VideojuegosController : ControllerBase
 {
+
     [HttpGet]
     public IActionResult Get()
     {
@@ -42,7 +44,7 @@ public class VideojuegosController : ControllerBase
             return BadRequest();
         }
         BD.InsertarVideojuegoConObjeto(v);
-        return Created();
+        return CreatedAtAction("Post",null);
     }
 
     [HttpPut("{id}")]
